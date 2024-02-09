@@ -1,0 +1,67 @@
+.todo-item-content {
+
+    background-color: #8EBBA7;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 100px;
+
+    border-radius: 5px;
+
+    padding: 10px;
+}
+
+.todo-item-info-content {
+    display: grid;
+}
+
+.todo-item-info-title {
+    font-size: large;
+    color: #222;
+}
+
+input {
+    background: none;
+    border: none;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.todo-item-info-description {
+    font-size: small;
+    color: #444;
+}
+
+.todo-item-date {
+    font-size: small;
+    font-style: italic;
+    color: #222;
+
+    font-weight: 700;
+}
+
+.todo-item-toggle {
+    width: 25px;
+    height: 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #B9CDCB;
+
+    font-weight: 700;
+}
+
+.is-check .todo-item-toggle {
+    background-color: #FCAC89;
+}
+
+.is-check .todo-item-info-title,
+.is-check .todo-item-info-description {
+    text-decoration: line-through;
+    opacity: 0.75;
+}

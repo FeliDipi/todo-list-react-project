@@ -1,0 +1,17 @@
+.todo-list-panel {
+
+    max-height: 500px;
+
+    background-color: #B9CDCB;
+    border-radius: 10px;
+
+    padding: 10px;
+
+    overflow: hidden auto;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}

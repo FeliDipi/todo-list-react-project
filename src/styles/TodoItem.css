@@ -1,6 +1,7 @@
 .todo-item-content {
 
-    background-color: #8EBBA7;
+    background-color: #DDD;
+    border-bottom: 2px solid #3498db;
 
     display: flex;
     justify-content: space-between;
@@ -11,6 +12,10 @@
     border-radius: 5px;
 
     padding: 10px;
+}
+
+.todo-item-content.is-check {
+    border-bottom: 2px solid #e74c3c;
 }
 
 .todo-item-info-content {
@@ -37,27 +42,40 @@ input:focus {
 }
 
 .todo-item-date {
-    font-size: small;
-    font-style: italic;
-    color: #222;
 
-    font-weight: 700;
-}
+    background-color: #3498db;
+    padding: 5px;
 
-.todo-item-toggle {
-    width: 25px;
-    height: 25px;
-
-    border: none;
     border-radius: 5px;
 
-    background-color: #B9CDCB;
-
-    font-weight: 700;
+    font-size: small;
+    font-style: italic;
+    color: #eee;
 }
 
-.is-check .todo-item-toggle {
-    background-color: #FCAC89;
+.todo-item-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-item-toggle,
+.todo-item-delete {
+    width: 25px;
+    height: 25px;
+}
+
+.todo-item-delete {
+    border: none;
+    border-radius: 2.5px;
+    background-color: #e74c3c;
+
+    color: #FFF;
+    font-size: large;
+}
+
+.is-check .todo-item-toggle,
+.is-check .todo-item-date {
+    background-color: #e74c3c;
 }
 
 .is-check .todo-item-info-title,

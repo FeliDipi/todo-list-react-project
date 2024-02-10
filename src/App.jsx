@@ -1,11 +1,10 @@
-import Todos from './components/Todos.jsx';
-import { todos } from './mock/todos.js';
+import TodoList from './components/TodoList.jsx';
 import './styles/App.css';
 
 function App() {
   return (
-      <Todos todos={todos}>
-      </Todos>
+      <TodoList>
+      </TodoList>
     )
 }
 

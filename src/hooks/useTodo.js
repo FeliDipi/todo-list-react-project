@@ -61,7 +61,7 @@ export const useTodos = () =>
 
     const filterTodoItem = ({action, props}) =>
     {
-        const todosSaved = JSON.parse(localStorage.getItem("todos"));
+        const todosSaved = todosInitial;
 
         switch(action)
         {
@@ -91,8 +91,9 @@ export const useTodos = () =>
 
     const saveTodos = (todos) =>
     {
-        setTodos(todos);
         localStorage.setItem("todos",JSON.stringify(todos));
+        todosInitial = todos;
+        setTodos(todos);
     }
 
     return {

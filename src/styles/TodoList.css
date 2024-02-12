@@ -1,0 +1,25 @@
+.todo-list {
+    display: grid;
+
+    gap: 20px;
+}
+
+.todo-list-panel {
+
+    max-height: 500px;
+
+    background-color: #eee;
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);
+
+    padding: 10px;
+
+    overflow: hidden auto;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}

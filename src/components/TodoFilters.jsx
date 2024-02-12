@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/TodoFilters.css";
 
 const TodoFilters = ({filterTodo}) =>
 {
@@ -50,8 +51,8 @@ const TodoFilters = ({filterTodo}) =>
     return (
         <div className="todo-list-filters-content">
             <button onClick={handleFilterButton} className="todo-list-filter-button" style={{backgroundColor:filterColor}}>{filterTxt}</button>
-            <input className="todo-list-filter-title" onChange={handleFilterTitle} type="text" placeholder="title..."/>
-            <input className="todo-list-filter-date" onChange={handleFilterDate} type="text" placeholder="01/01/99"/>
+            <input className="todo-list-filter-input" onChange={handleFilterTitle} type="text" placeholder="title..."/>
+            <input className="todo-list-filter-input" onChange={handleFilterDate} type="text" placeholder="01/01/99"/>
         </div>
     );
 }

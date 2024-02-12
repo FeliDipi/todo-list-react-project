@@ -62,7 +62,6 @@ input:focus {
     border-radius: 5px;
 
     font-size: small;
-    font-style: italic;
     color: #eee;
 
     pointer-events: none;

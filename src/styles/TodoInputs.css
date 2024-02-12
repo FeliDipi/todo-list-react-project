@@ -1,0 +1,47 @@
+.todo-list-inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.todo-list-add-input {
+    background-color: #DDD;
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 5px;
+}
+
+.todo-list-inputs-buttons-content {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.todo-list-add-button {
+
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    width: 25px;
+    height: 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #3498db;
+
+    color: #fff;
+    font-size: large;
+    font-weight: 700;
+}
+
+.todo-list-add-button:hover {
+    transform: scale(0.95);
+}

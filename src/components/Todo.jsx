@@ -1,4 +1,4 @@
-import "../styles/TodoItem.css";
+import "../styles/Todo.css";
 
 const Todo = ({onEdit, onDelete, id, title, description, date, isCompleted}) =>
 {

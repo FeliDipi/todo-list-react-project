@@ -1,5 +1,6 @@
 import { useState } from "react";
-import TodoFilters from "./TodoFilters";
+import "../styles/TodoInputs.css";
+import TodoFilters from "./TodoFilters.jsx";
 
 const TodoInput = ({addTodo, filterTodo}) =>
 {

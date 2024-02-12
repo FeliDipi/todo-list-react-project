@@ -12,6 +12,19 @@
     border-radius: 5px;
 
     padding: 10px;
+
+    transform-origin: top;
+    animation: 0.25s ease-in-out spawn;
+}
+
+@keyframes spawn {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .todo-item-content.is-check {
@@ -51,6 +64,8 @@ input:focus {
     font-size: small;
     font-style: italic;
     color: #eee;
+
+    pointer-events: none;
 }
 
 .todo-item-inputs {
@@ -60,8 +75,19 @@ input:focus {
 
 .todo-item-toggle,
 .todo-item-delete {
+
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
     width: 25px;
     height: 25px;
+}
+
+
+.todo-item-toggle:hover,
+.todo-item-delete:hover {
+
+    transform: scale(0.95);
 }
 
 .todo-item-delete {

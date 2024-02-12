@@ -1,6 +1,7 @@
 import { useState } from "react";
+import TodoFilters from "./TodoFilters";
 
-const TodoInput = ({addTodo}) =>
+const TodoInput = ({addTodo, filterTodo}) =>
 {
     const [info, setInfo] = useState({title:"",description:""});
 
@@ -31,7 +32,10 @@ const TodoInput = ({addTodo}) =>
         <div className="todo-list-panel todo-list-inputs">
             <input onChange={handleTitle} className="todo-list-add-input" type="text" placeholder="task title..." value={info.title}/>
             <input onChange={handleDescription} className="todo-list-add-input" type="text" placeholder="task description..." value={info.description}/>
-            <button className="todo-list-add-button" onClick={handleToAdd}>+</button>
+            <div className="todo-list-inputs-buttons-content">
+                <button className="todo-list-add-button" onClick={handleToAdd}>+</button>
+                <TodoFilters filterTodo={filterTodo}/>
+            </div>
         </div>
     )
 }

@@ -5,16 +5,23 @@ import TodoInput from './TodoInput.jsx';
 
 const TodoList = () =>
 {
-    const {todos,addTodoItem,removeTodoItem,editTodoItem} = useTodos();
+    const {todos,addTodoItem,removeTodoItem,editTodoItem, filterTodoItem} = useTodos();
+
+    console.log(todos);
 
     return (
         <div className='todo-list'>
             <ul className="todo-list-panel">
-                { 
-                    todos.map(todoProps => <Todo key={todoProps.id} onEdit={editTodoItem} onDelete={removeTodoItem} {...todoProps}/>)
+                {          
+                    todos.map(todo => 
+                        <Todo key={todo.id} 
+                              onEdit={editTodoItem} 
+                              onDelete={removeTodoItem} 
+                              {...todo}
+                        />)
                 }   
             </ul>
-            <TodoInput addTodo={addTodoItem} />
+            <TodoInput addTodo={addTodoItem} filterTodo={filterTodoItem} />
         </div> 
     )
 }

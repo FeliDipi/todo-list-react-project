@@ -1,4 +1,7 @@
 .todo-list {
+
+    min-width: 500px;
+
     display: grid;
 
     gap: 20px;
@@ -40,7 +43,20 @@
     border-radius: 5px;
 }
 
+.todo-list-inputs-buttons-content {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .todo-list-add-button {
+
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
     width: 25px;
     height: 25px;
 
@@ -52,4 +68,46 @@
     color: #fff;
     font-size: large;
     font-weight: 700;
+}
+
+.todo-list-filters-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.todo-list-filter-button {
+
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+
+    padding: 5px;
+
+    border: none;
+    border-radius: 5px;
+
+    color: #FFF;
+
+    font-weight: 700;
+}
+
+.todo-list-add-button:hover,
+.todo-list-filter-button:hover {
+    transform: scale(0.95);
+}
+
+.todo-list-filter-title,
+.todo-list-filter-date {
+    background-color: #DDD;
+    border-radius: 5px;
+
+    padding: 5px;
+
+    width: 100px;
+}
+
+.todo-list-filter-date {
+    text-align: center;
 }

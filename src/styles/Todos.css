@@ -1,7 +1,4 @@
 .todo-list {
-
-    min-width: 500px;
-
     display: grid;
 
     gap: 20px;
@@ -50,6 +47,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 10px;
 }
 
 .todo-list-add-button {

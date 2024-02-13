@@ -15,11 +15,11 @@ export const getTodoDB = async () =>
     return response;
 }
 
-export const addTodoDB = async ({title, description}) =>
+export const addTodoDB = async ({title, description, date}) =>
 {
     const response = await client.execute({
-        sql:`INSERT INTO Todos (todo_title, todo_description) VALUES (?,?)`,
-        args:[title,description]
+        sql:`INSERT INTO Todos (todo_title, todo_description, todo_date) VALUES (?,?,?)`,
+        args:[title,description,date]
     });
     
     return response;

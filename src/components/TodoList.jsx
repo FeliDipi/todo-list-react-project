@@ -18,7 +18,7 @@ const TodoList = () =>
         <div className='todo-list'>
             <ul className="todo-list-panel">
                 {          
-                    todos.map(({todo_id,todo_title,todo_description,todo_isCompleted}) => 
+                    todos.map(({todo_id,todo_title,todo_description,todo_date,todo_isCompleted}) => 
                         <Todo key={todo_id} 
                               onEdit={updateTodo} 
                               onDelete={removeTodo} 
@@ -26,7 +26,7 @@ const TodoList = () =>
                               title={todo_title}
                               description={todo_description ?? ""}
                               isCompleted={todo_isCompleted==1}
-                              date={"01/02/24"}
+                              date={todo_date}
                         />)
                 }   
             </ul>

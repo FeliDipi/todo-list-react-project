@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addTodoDB, getTodoDB, removeTodoDB, updateTodoDB } from "../../db/client.js";
+import { dateFormatter } from "../utils/dateFormatter.js";
 
 export const useTodos = () =>
 {
@@ -17,7 +18,9 @@ export const useTodos = () =>
 
     const addTodo = async ({title,description}) =>
     {
-        await addTodoDB({"title":title,"description":description});
+        const dateFormatted = dateFormatter(new Date());
+
+        await addTodoDB({"title":title,"description":description,"date":dateFormatted});
         getTodo();
     }
 
@@ -49,6 +52,11 @@ export const useTodos = () =>
             case "title":
                 {
                     setTodos(todosSaved.filter(({todo_title}) => todo_title.includes(props)));
+                }
+                break;
+            case "date":
+                {
+                    setTodos(todosSaved.filter(({todo_date})=>todo_date.includes(props)));
                 }
                 break;
         }

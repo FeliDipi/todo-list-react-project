@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { addTodoDB, getTodoDB, removeTodoDB, updateTodoDB } from "../../db/client.js";
-import { dateFormatter } from "../utils/dateFormatter.js";
+import { FILTER_TYPE } from "../utils/filterType.js";
 
 export const useTodos = () =>
 {
@@ -18,15 +18,13 @@ export const useTodos = () =>
 
     const addTodo = async ({title,description}) =>
     {
-        const dateFormatted = dateFormatter(new Date());
-
-        await addTodoDB({"title":title,"description":description,"date":dateFormatted});
+        await addTodoDB({"title":title,"description":description,"date":new Date()});
         getTodo();
     }
 
     const updateTodo = async ({id,title,description,isCompleted}) =>
     {
-        await updateTodoDB({"id":id,"title":title,"description":description,"isCompleted":isCompleted?1:0});
+        await updateTodoDB({"id":id,"title":title,"description":description,"isCompleted":isCompleted});
         getTodo();
     }
 
@@ -36,27 +34,26 @@ export const useTodos = () =>
         getTodo();
     }
 
-    const filterTodo = ({action, props}) =>
+    const filterTodo = ({filter, props}) =>
     {
         const todosSaved = originalTodos;
 
-        switch(action)
+        switch(filter)
         {
-            case "check" :
+            case FILTER_TYPE.CHECK:
                 {
-                    if(props == 0) setTodos(todosSaved);
-                    else if(props == 1 ) setTodos(todosSaved.filter(({todo_isCompleted}) => todo_isCompleted==1));
-                    else setTodos(todosSaved.filter(({todo_isCompleted}) => todo_isCompleted==0));
+                    if(props == 0) 
+                    {
+                        setTodos(todosSaved);
+                        return;
+                    }
+
+                    setTodos(todosSaved.filter(({todo_isCompleted}) => props==1?todo_isCompleted:!todo_isCompleted));
                 }
                 break;
-            case "title":
+            case FILTER_TYPE.TITLE:
                 {
                     setTodos(todosSaved.filter(({todo_title}) => todo_title.includes(props)));
-                }
-                break;
-            case "date":
-                {
-                    setTodos(todosSaved.filter(({todo_date})=>todo_date.includes(props)));
                 }
                 break;
         }

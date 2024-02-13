@@ -25,7 +25,7 @@ const TodoList = () =>
                               id={todo_id}
                               title={todo_title}
                               description={todo_description ?? ""}
-                              isCompleted={todo_isCompleted==1}
+                              isCompleted={todo_isCompleted}
                               date={todo_date}
                         />)
                 }   

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "../styles/Todo.css";
+import { dateFormatter } from "../utils/dateFormatter.js";
 
 const Todo = ({onEdit, onDelete, id, title, description, date, isCompleted}) =>
 {
-    const [info, setInfo] = useState({title,description});
+    const dateFromTimestamp = new Date(date);
+    const dateFormatted = dateFormatter(dateFromTimestamp);
 
+    const [info, setInfo] = useState({title,description});
     const checkClass = isCompleted ? "todo-item-content is-check" : "todo-item-content";
 
     const handleCheck = () =>
@@ -40,7 +43,7 @@ const Todo = ({onEdit, onDelete, id, title, description, date, isCompleted}) =>
                 <input onChange={handleChangeTitle} onBlur={handleFinishChanges} type="text" className="todo-item-info-title" value={info.title}/>
                 <input onChange={handleChangeDescription} onBlur={handleFinishChanges} type="text" className="todo-item-info-description" value={info.description}/>
             </div>
-            <p className="todo-item-date">{date}</p>
+            <p className="todo-item-date">{dateFormatted}</p>
             <div className="todo-item-inputs">
                 <input className="todo-item-toggle" type="checkbox" checked={isCompleted} onChange={handleCheck}/>
                 <button className="todo-item-delete" onClick={handleDeleteTodo}>X</button>
